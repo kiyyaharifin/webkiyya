@@ -42,13 +42,21 @@ jQuery(document).ready(function($) {
         }
         
         $('nav a, .main-btn a').click(function(e) {
-            // When link clicked, find slide it points to
-            var newslide = parseInt($(this).attr('href')[1]);
-            // find how far it is from current slide
-            var diff = newslide - currSlide - 1;
-            showSlide(diff); // show that slide
-            e.preventDefault();
-        });
+    var href = $(this).attr('href');
+
+    // Jika href mengandung "index.html" atau tidak dimulai dengan "#", 
+    // biarkan browser berpindah halaman secara normal.
+    if (href.indexOf('index.html') !== -1 || !href.startsWith('#')) {
+        return; 
+    }
+
+    // Kode asli untuk navigasi slide (hanya jalan jika link-nya seperti #1, #2, dst)
+    var newslide = parseInt(href[1]);
+    var diff = newslide - currSlide - 1;
+    showSlide(diff);
+    e.preventDefault();
+});
+
       
         $(window).resize(function(){
           // Keep current slide to left of window on resize
