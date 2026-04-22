@@ -820,16 +820,16 @@ nav a:hover::before {
 		text-align: left;
 	}
 
-	.fourth-content .item .hover-effect h2 {
+	.third-content .item .hover-effect h2 {
 		font-size: 15px;
 	}
 
 
-	.fifth-content #map {
+	.fourth-content #map {
 		padding: 15px 15px 15px 15px;
 	}
 
-	.fifth-content #contact {
+	.fourth-content #contact {
 		padding: 15px 15px 15px 15px;
 	}
 
